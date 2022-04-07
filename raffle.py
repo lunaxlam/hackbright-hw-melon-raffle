@@ -1,6 +1,6 @@
 """Read customer data from file and run a raffle."""
 
-# Import the random functionf rom the random library 
+# Import the random function from the random library 
 import random
 
 
@@ -54,8 +54,11 @@ def pick_winner(customers):
 def run_raffle():
     """Run the weekly raffle."""
 
+    # Call the get_customers_from_file() and pass in the customers.txt file; return list of customers and store in "customers" variable
     customers = get_customers_from_file("customers.txt")
+    # Call the pick_winner file and pass in the "customers" variable
     pick_winner(customers)
 
+# If the file that we are running is the main program file then call run_raffle()
 if __name__ == "__main__":
     run_raffle()
