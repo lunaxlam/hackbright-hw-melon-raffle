@@ -5,24 +5,22 @@ import random
 from customers import get_customers_from_file
 
 
-def get_random_customer(customers):
-    """Randomly pick a customer and return the customer."""
+def pick_winner(customers):
+    """Randomly pick a winner from the list of customers and return the winner."""
 
-    customer = random.choice(customers)
+    winner = random.choice(customers)
 
-    return customer
+    return winner
 
 
-def print_customer_info(customer):
+def print_winner_info(customer):
     """Print info about a chosen customer."""
 
     name = customer.name
     email = customer.email
-    street = customer.street
     city = customer.city
-    zipcode = customer.zipcode
 
-    print(f"Customer name: {name}, Email: {email}, Street: {street}, City: {city}, Zipcode: {zipcode}")
+    print(f"{name} (email: {email}) from {city} is the winner!")
 
     
 def main():
@@ -31,8 +29,8 @@ def main():
     # Call function to get a list of customers
     customers = get_customers_from_file("customers.txt")
     # Call a function to get a random customer
-    customer = get_random_customer(customers)
-    print_customer_info(customer)
+    winner = pick_winner(customers)
+    print_winner_info(winner)
 
 
 # If the file that we are running is the main program file then call run_raffle()
